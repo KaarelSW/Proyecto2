@@ -1,5 +1,32 @@
+.navbar-brand{
+    font-size: 2.5rem;
+}
+
+.nav-item{
+    margin-top: 10px;
+    font-size: 23px;
+}
+
+.header-blue .hero h1{
+    font-size: 55px !important;
+}
+
+.header-blue .hero p{
+    font-size: 23px !important;
+}
+
+#landing-img{
+    border-radius: 0.75rem;
+    max-width: 450px;
+    width: 100%;
+}
+
+.row{
+    align-items: center !important;
+}
+
 .header-blue {
-    background: linear-gradient(135deg, #fe2929, #ffb3c5);
+    background: linear-gradient(135deg, #383838, #8d8d8d);
     background-color: #184e8e;
     padding-bottom: 80px;
 }
