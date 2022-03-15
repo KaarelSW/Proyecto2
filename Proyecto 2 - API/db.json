@@ -1,0 +1,84 @@
+{
+  "empleados": [
+    {
+      "nombre": "Jesé",
+      "apellido": "Rodríguez",
+      "correo": "test1@scenariox.com",
+      "direccion": "2752 Pineview Drive",
+      "usuario": "jeserodiguez93",
+      "contraseña": "ec4f76b20ec07977cf137cc64499d5c20c89a15f"
+    },
+    {
+      "nombre": "Carmen",
+      "apellido": "Santos",
+      "correo": "test2@scenariox.com",
+      "direccion": "Columbia de la fuente nº7",
+      "usuario": "carmensantos89",
+      "contraseña": "f1196a8a993e28d05bd187b7b130720e5dd34147"
+    },
+    {
+      "nombre": "Roberto",
+      "apellido": "Aguilar",
+      "correo": "test3@scenariox.com",
+      "direccion": "Avenida Primavera nº2",
+      "usuario": "robertoaguilar92",
+      "contraseña": "ba4e8ace7c4fe369b44951b39de51b602cda3ada"
+    },
+    {
+      "nombre": "Alejandro",
+      "apellido": "Montero",
+      "correo": "test4@scenariox.com",
+      "direccion": "Calle Libertadores, Bloque 4 nº7",
+      "usuario": "monteroa2",
+      "contraseña": "5b4a9e08555d97c5e8bc2fb4f3a89ddde501f7c8"
+    },
+    {
+      "nombre": "Miguel",
+      "apellido": "Lázaro",
+      "correo": "test5@scenariox.com",
+      "direccion": "Avenida Corral nº 17",
+      "usuario": "miguellazarillo",
+      "contraseña": "f1196a8a993e28d05bd187b7b130720e5dd34147"
+    },
+    {
+      "nombre": "Ana",
+      "apellido": "Sánchez",
+      "correo": "test6@scenariox.com",
+      "direccion": "Calle los Escolares, Bloque 2, 2-A",
+      "usuario": "sanchez98",
+      "contraseña": "937bfaea6b875d17a48b0e4b499c346e56c4ca1c"
+    },
+    {
+      "nombre": "Laura",
+      "apellido": "Cervantes",
+      "correo": "test7@scenariox.com",
+      "direccion": "Calle Juan del Castillo nº5",
+      "usuario": "carmensantos89",
+      "contraseña": "f1196a8a993e28d05bd187b7b130720e5dd34147"
+    },
+    {
+      "nombre": "Pedro",
+      "apellido": "Jiménez",
+      "correo": "test8@scenariox.com",
+      "direccion": "Rebecca Street nº34",
+      "usuario": "pedrojimenez121",
+      "contraseña": "99eee3a42d49232d834f300b1375a0c76ee27279"
+    },
+    {
+      "nombre": "Margaret",
+      "apellido": "Barkley",
+      "correo": "test9@scenariox.com",
+      "direccion": "Hayhurst Lane nº36",
+      "usuario": "margaretb1",
+      "contraseña": "066c2618b038cdfe7862537dbcd027c1f22e7830"
+    },
+    {
+      "nombre": "José Antonio",
+      "apellido": "Espinosa",
+      "correo": "test10@scenariox.com",
+      "direccion": "Calle Carteia nº7",
+      "usuario": "jaespi12",
+      "contraseña": "f8e089ebc0d614a6a2fd1904c9980e6ace6eb015"
+    }      
+  ]
+}
