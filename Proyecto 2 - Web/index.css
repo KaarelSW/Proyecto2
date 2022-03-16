@@ -265,10 +265,6 @@
     border: 1px solid #444;
 }
 
-h2{
-    text-align: center;
-}
-
   #one {
     grid-column: 1;
     grid-row: 1;    
