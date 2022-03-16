@@ -13,7 +13,7 @@ describe('Get All', () => {
     expect(200);
   })
 
-  it('should send json object', async () => {
+  it('should send object', async () => {
     const res = await request(app)
       .get("/get")
     expect(res.body && typeof res.body === 'object').toBe(true);
