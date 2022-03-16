@@ -11,18 +11,33 @@
     font-size: 55px !important;
 }
 
+.navbar a{
+    margin-left: 2% !important;
+}
+
 .header-blue .hero p{
     font-size: 23px !important;
 }
 
 #landing-img{
     border-radius: 0.75rem;
-    max-width: 450px;
+    max-width: 1000px;
     width: 100%;
+    margin: 0 auto;
 }
 
 .row{
     align-items: center !important;
+    justify-content: space-between;
+}
+
+#snariox-text{
+    margin-bottom: 12%;
+}
+
+#snariox-text p{
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .header-blue {
