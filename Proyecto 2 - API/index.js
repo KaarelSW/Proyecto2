@@ -2,11 +2,11 @@ var express = require("express");
 var app = express();
 
 
-app.get('/', function (req, res) {
+app.get('/get', function (req, res) {
     res.sendFile(__dirname + '/db.json');
 });
 
-/* app.get('/user', function (req, res) {
+/* app.get('get/{user}', function (req, res) {
     
 }); */
 
@@ -17,3 +17,5 @@ var server = app.listen(8080, function() {
     console.log("Escuchando por el puerto " + port + ".");
 
 })
+
+module.exports = server;
