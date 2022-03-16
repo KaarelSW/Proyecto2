@@ -1,9 +1,9 @@
 Feature: consultar empleados
 
-    Scenario: Visualizar número de empleados
+    Scenario: Al pedir la lista se devuelve un archivo JSON
         Given un administrador quiere consultar empleados
-        When realiza petición de consulta (get)
-        Then devuelve json con lista empleados
+        When realiza petición de consulta
+        Then devuelve un json
 
     Scenario: consultar empleados lista vacía
         Given un administrador quiere consultar empleados

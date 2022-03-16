@@ -1,5 +1,8 @@
 package Proyecto2.cucumber;
 
+import io.cucumber.java.an.E;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.But;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -7,30 +10,84 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
+import org.json.JSONObject;
 import org.junit.Assert;
 
 public class StepDefinitions {
 
-	private static final String BASE_URL = "localhost:8080";
+	private static final int PORT = 8080;
 	RequestSpecification request;
     
     @Given("^un administrador quiere consultar empleados$")
     public void API_is_provided() throws Exception {
-        RestAssured.baseURI  = BASE_URL;
+        RestAssured.port  = PORT;
         request = RestAssured.given();
 
     }
+    
     Response response;
-    @When("realiza petición de consulta \\(get)")
+    @When("realiza petición de consulta")
     public void call_getAll_API() throws Exception {
     	response = request.get("/get");
 
     }
 
-    @Then("^devuelve json con lista empleados$")
-    public void a_status_200_() throws Exception {
+    @Then("^devuelve un json$")
+    public void status_200_y_body_tipo_json() throws Exception {
     	int statusCode = response.getStatusCode();
-    	Assert.assertEquals(statusCode,"200");
+    	Assert.assertEquals(200,statusCode);
+    	JSONObject json = new JSONObject(response.body().asString());
+    	assertTrue(json instanceof JSONObject);
 
     }
+
+    int lengthExpected;
+    
+    @But("^la lista está vacía$")
+    public void la_lista_está_vacía() throws Exception {
+    	lengthExpected = 0;
+    	
+    }
+
+    @Then("^devuelve advertencia$")
+    public void devuelve_advertencia() throws Exception {
+    int responseLenght = response.body().toString().length();
+    Assert.assertEquals(lengthExpected, responseLenght);
+
+    }
+    
+    
+    int itemsExpected;
+    
+    @And("conoce numero exacto empleados") 
+    public void la_lista_tiene_10_empleados() throws Exception {
+    	itemsExpected = 10;
+    	
+    }
+    
+    @Then("devuelve json con número exacto empleados")
+    public void devuelve_json_10_items() throws Exception {
+        List<E> listaEmpleados = response.body().jsonPath().getList("empleados");
+        Assert.assertEquals(itemsExpected, listaEmpleados.size());
+        
+    }
+    
+    int statusCodeExpected;
+    
+    @But("^no existe el archivo$")
+    public void no_existe_el_archivo() throws Exception {
+    	statusCodeExpected = 404;
+    }
+
+    @Then("^mostrar error de advertencia$")
+    public void mostrar_error_de_advertencia() throws Exception {
+    int statusCode = response.getStatusCode();
+    Assert.assertEquals(statusCodeExpected, statusCode);
+    }
 }
+
+
