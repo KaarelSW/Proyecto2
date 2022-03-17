@@ -52,19 +52,5 @@ function testNumber(valor){
     }
 }
 
-describe('Test Email', () => {
-    it('should warn about introducing an email', () => {
-      var value = testEmail("");
-      expect(value).toBe("¡Introduce un e-mail!");
-    })
-  
-    it('should warn about introducing a valid email', () => {
-      expect(testEmail("blabla32")).toBe("Por favor, introduce un e-mail válido");
-    })
-  
-    it('should not give a warning', () => {
-      expect(testEmail("blabla32@gmail.com")).toBe("");
-    })
-  
-  })
-  
+module.exports = { testEmail, testName, testNumber }
+
