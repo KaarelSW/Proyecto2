@@ -5,7 +5,7 @@ Feature: Buscar datos detallados de un empleado
 		When realiza petición de consulta por nombre de usuario
 		Then el empleado existe y se devuelve un ok
 
-	Scenario:Se devuelve un error al pedir los datos de un empleado si este no existe
+	Scenario: Se devuelve un error al pedir los datos de un empleado si este no existe
 		Given un administrador quiere consultar un empleado
 		When realiza petición de consulta por nombre de usuario
 		But  no encuentra el nombre de usuario del empleado

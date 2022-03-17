@@ -109,7 +109,7 @@ public class StepDefinitions {
 
     }
     
-    @Then("^devuelve un json$")
+    @Then("^el empleado existe y se devuelve un ok$")
     public void status_200() throws Exception {
     	int statusCode = response.getStatusCode();
     	Assert.assertEquals(200,statusCode);
