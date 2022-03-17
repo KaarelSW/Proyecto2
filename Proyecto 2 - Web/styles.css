@@ -1,22 +1,31 @@
-.navbar-brand{
-    font-size: 2.5rem;
+footer{
+    border-top: 1px solid black;
+    background: linear-gradient(135deg, #383838, #727272);
+    color: white !important;
 }
 
-.nav-item{
-    margin-top: 10px;
-    font-size: 23px;
+footer .h1{
+    margin-bottom: 15px;
 }
 
-.header-blue .hero h1{
-    font-size: 55px !important;
+
+footer a{
+    color: white !important;
+    text-decoration: none;
 }
 
-.navbar a{
-    margin-left: 2% !important;
+h2{
+    margin-top: 150px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 300;
+    color: #fff;
+    padding: 0 15px;
 }
 
-.header-blue .hero p{
-    font-size: 23px !important;
+h3{
+    padding: 15px;
+    text-align: center;
 }
 
 #landing-img{
@@ -26,11 +35,6 @@
     margin: 0 auto;
 }
 
-.row{
-    align-items: center !important;
-    justify-content: space-between;
-}
-
 #snariox-text{
     margin-bottom: 12%;
 }
@@ -38,6 +42,14 @@
 #snariox-text p{
     text-align: justify;
     text-justify: inter-word;
+}
+
+.header-blue .hero h1{
+    font-size: 55px !important;
+}
+
+.header-blue .hero p{
+    font-size: 23px !important;
 }
 
 .header-blue {
@@ -261,13 +273,17 @@
     opacity: 0.2
 }
 
-.wrapper {
-    display: grid;
-    margin: 100px 50px 250px 50px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-    text-align: justify;
+.navbar-brand{
+    font-size: 2.5rem;
+}
+
+.nav-item{
+    margin-top: 10px;
+    font-size: 23px;
+}
+
+.navbar a{
+    margin-left: 2% !important;
 }
 
 .product{
@@ -284,26 +300,26 @@
     background-color: rgb(187, 175, 175);
 }
 
+.row{
+    align-items: center !important;
+    justify-content: space-between;
+}
+
+.wrapper {
+    display: grid;
+    margin: 100px 50px 250px 50px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    text-align: justify;
+}
+
 #leer-mas{
     transition: 200ms all;
 }
 
 #leer-mas:hover{
     background-color: rgba(187, 175, 175, 0.5);
-}
-
-h2{
-    margin-top: 150px;
-    text-align: center;
-    font-size: 60px;
-    font-weight: 300;
-    color: #fff;
-    padding: 0 15px;
-}
-
-h3{
-    padding: 15px;
-    text-align: center;
 }
 
 #one {
@@ -392,22 +408,6 @@ h3{
     border-radius: 0.75rem;
     width: 80%;
     box-shadow: 10px 10px 5px rgb(26, 26, 26);
-}
-
-footer{
-    border-top: 1px solid black;
-    background: linear-gradient(135deg, #383838, #727272);
-    color: white !important;
-}
-
-footer .h1{
-    margin-bottom: 15px;
-}
-
-
-footer a{
-    color: white !important;
-    text-decoration: none;
 }
 
 #redes-sociales img{
