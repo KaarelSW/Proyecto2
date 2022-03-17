@@ -7,9 +7,9 @@ Feature: consultar empleados
 
     Scenario: consultar empleados lista vacía
         Given un administrador quiere consultar empleados
-    		When realiza petición de consulta
-    		But la lista está vacía
-    		Then devuelve advertencia
+        When realiza petición de consulta
+        But la lista está vacía
+        Then devuelve advertencia
 
     Scenario: visualizar determinado número de empleados
         Given un administrador quiere consultar empleados
@@ -20,5 +20,5 @@ Feature: consultar empleados
     Scenario: visualizar empleados sin archivo
         Given un administrador quiere consultar empleados
         When realiza petición de consulta
-				But no existe el archivo
-				Then mostrar error de advertencia
+        But no existe el archivo
+        Then mostrar error de advertencia
