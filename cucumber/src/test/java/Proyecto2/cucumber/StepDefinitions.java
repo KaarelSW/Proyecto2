@@ -104,8 +104,8 @@ public class StepDefinitions {
 
     @When("realiza petición de consulta por nombre de usuario")
     public void call_getEmpleado_API() throws Exception {
-        String usuarioEmpleado = "jeserodiguez93";
-        response = request.get("/get/" + usuarioEmpleado);
+    	String usuarioEmpleado = "jeserodiguez93";
+    	response = request.get("/empleado/"+usuarioEmpleado);
 
     }
 
@@ -115,6 +115,21 @@ public class StepDefinitions {
         Assert.assertEquals(200, statusCode);
 
     }
+    
+    @But("no encuentra el nombre de usuario del empleado")
+    public void no_encuentra_el_nombre_de_usuario_del_empleado() throws Exception {
+    	String usuarioEmpleado = "cristianoRonaldoSiuuuU";
+    	response = request.get("/empleado/" + usuarioEmpleado);
+    }
+    
+    @Then("^devuelve un aviso de error$")
+    public void devuelve_un_aviso_de_error() throws Exception {
+    	int statusCode = response.getStatusCode();
+    	Assert.assertEquals(404,statusCode);
+
+    }
+    
+}
 
     // Scenario: Da error si al pedir los datos de un empleado, el valor de alguna
     // propiedad está vacio

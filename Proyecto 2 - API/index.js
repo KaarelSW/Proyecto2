@@ -10,7 +10,9 @@ app.get('/empleado/:usuario', function (req, res) {
     const usuario = req.params.usuario;
     var empleados = require(__dirname + '/db.json').empleados;
     var datos = empleados.find(x => x.usuario == usuario);
-    res.send(datos);
+    
+    if (JSON.stringify(datos)) res.send(datos);
+    else res.status(404).send("Usuario no encontrado");
 });
 
 var server = app.listen(8080, function () {
