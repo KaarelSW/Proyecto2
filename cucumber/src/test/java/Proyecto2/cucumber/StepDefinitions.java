@@ -17,8 +17,6 @@ import java.util.List;
 import org.json.JSONObject;
 import org.junit.Assert;
 
-import groovyjarjarantlr4.v4.parse.ANTLRParser.exceptionGroup_return;
-
 public class StepDefinitions {
 
     private static final int PORT = 8080;
@@ -111,7 +109,7 @@ public class StepDefinitions {
 
     }
 
-    @Then("^devuelve un json$")
+    @Then("^el empleado existe y se devuelve un ok$")
     public void status_200() throws Exception {
         int statusCode = response.getStatusCode();
         Assert.assertEquals(200, statusCode);
@@ -129,7 +127,6 @@ public class StepDefinitions {
 
     @Then("^devuelve un error$")
     public void devolver_error_con_propiedad_vacia() throws Exception {
-        apellidoLenght = request.get();
 
     }
 }
