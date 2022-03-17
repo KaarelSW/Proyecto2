@@ -20,7 +20,7 @@ Feature: Buscar datos detallados de un empleado
 		Given un administrador quiere consultar un empleado
 		When realiza petición de consulta por nombre de usuario
 		And alguna de sus propiedades está vacia
-		Then devuelve un error
+		Then devuelve un error al respecto
 
 	Scenario: Al pedir los datos de un empleado, la propiedad nombre es una cadena de caracteres alfabéticos
 		Given un administrador quiere consultar un empleado
