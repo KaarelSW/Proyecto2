@@ -38,7 +38,7 @@
             <div class="row input-container">
                 <div class="col-xs-12">
                     <div class="styled-input wide">
-                        <input type="text" placeholder=" " oninput="InvalidName(this);" required />
+                        <input type="text" id="nombre" placeholder=" " oninput="InvalidName(this);" required />
                         <label>Nombre completo</label>
                     </div>
                 </div>
@@ -50,13 +50,13 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="styled-input" style="float:right;">
-                        <input type="text" placeholder=" " oninput="InvalidNumber(this);" required />
+                        <input type="text" id="telefono" placeholder=" " oninput="InvalidNumber(this);" required />
                         <label>Teléfono</label>
                     </div>
                 </div>
                 <div class="col-xs-12">
                     <div class="styled-input wide">
-                        <textarea placeholder=" " required></textarea>
+                        <textarea placeholder=" " id="mensaje" oninput="InvalidMensaje(this);" required></textarea>
                         <label>Mensaje</label>
                     </div>
                 </div>
