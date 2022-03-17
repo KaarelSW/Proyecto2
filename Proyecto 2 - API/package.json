@@ -4,12 +4,15 @@
   "description": "API para el proyecto 2 del Grupo 2",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node index"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3"
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "hbs": "^4.2.0"
   },
   "devDependencies": {
     "jest": "^27.5.1",
