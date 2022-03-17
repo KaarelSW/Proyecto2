@@ -6,7 +6,8 @@ afterAll(done => {
   done();
 });
 
-describe('Get Empleado', () => {
+describe('Get Empleado', () => {    
+  
   it('should be 200', async () => {
     const res = await request(app)
       .get("/empleado/monteroa2")
