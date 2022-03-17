@@ -131,6 +131,25 @@ public class StepDefinitions {
     } 
     
     
+    int nombreLenght, apellidoLenght, correoLenght, usuarioLenght, direccionLenght, contrasenyaLenght;
+    @And("^alguna de sus propiedades está vacia$")
+    public void alguna_de_sus_propiedad_está_vacia() throws Exception {
+    	JSONObject json = new JSONObject(response.body().asString());
+    	nombreLenght = json.get("nombre").toString().length();
+    	apellidoLenght = json.get("apellido").toString().length();
+    	correoLenght = json.get("correo").toString().length();
+    	usuarioLenght = json.get("usuario").toString().length();
+    	direccionLenght = json.get("direccion").toString().length();
+    	contrasenyaLenght = json.get("contraseña").toString().length();
+    }
+    
+    @Then("^devuelve un error al respecto$")
+    public void devuelve_un_error_al_respecto() throws Exception {
+    	int sumaLenght =nombreLenght + apellidoLenght + correoLenght + usuarioLenght + direccionLenght + contrasenyaLenght;
+    	Assert.assertFalse(sumaLenght == 0);
+
+    } 
+    
 
 
     @Then("^devuelve un objeto cuyo numero de propiedades coincide con las de empleado$")
