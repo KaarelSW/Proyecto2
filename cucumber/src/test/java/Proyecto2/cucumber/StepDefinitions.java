@@ -132,7 +132,7 @@ public class StepDefinitions {
     
     
 
-    
+
     @Then("^devuelve un objeto cuyo numero de propiedades coincide con las de empleado$")
     public void devuelve_un_objeto_cuyo_numero_de_propiedades_coincide_con_las_de_empleado() throws Exception {
     	JSONObject json = new JSONObject(response.body().asString());
@@ -216,17 +216,4 @@ public class StepDefinitions {
     
 }
 
-    // Scenario: Da error si al pedir los datos de un empleado, el valor de alguna
-    // propiedad está vacio
-    int propiedadCodeExpected;
 
-    @But("algunas de sus propiedades están vacías")
-    public void alguna_propiedad_vacia() throws Exception {
-        propiedadCodeExpected = 0;
-    }
-
-    @Then("^devuelve un error$")
-    public void devolver_error_con_propiedad_vacia() throws Exception {
-
-    }
-}
