@@ -21,9 +21,11 @@ public class StepDefinitions {
 
 	private static final int PORT = 8080;
 	RequestSpecification request;
+	
+	//Feature: Consultar todos los empleados
     
     @Given("^un administrador quiere consultar empleados$")
-    public void API_is_provided() throws Exception {
+    public void ruta_de_API() throws Exception {
         RestAssured.port  = PORT;
         request = RestAssured.given();
 
@@ -81,12 +83,37 @@ public class StepDefinitions {
     @But("^no existe el archivo$")
     public void no_existe_el_archivo() throws Exception {
     	statusCodeExpected = 404;
+    	
     }
 
     @Then("^mostrar error de advertencia$")
     public void mostrar_error_de_advertencia() throws Exception {
     int statusCode = response.getStatusCode();
     Assert.assertEquals(statusCodeExpected, statusCode);
+    
+    }
+    
+    //Feature: Buscar datos detallados de un empleado
+    
+    @Given("un administrador quiere consultar un empleado$")
+    public void ruta_de_API2() throws Exception {
+        RestAssured.port  = PORT;
+        request = RestAssured.given();
+
+    }
+    
+    @When("realiza petición de consulta por nombre de usuario")
+    public void call_getEmpleado_API() throws Exception {
+    	String usuarioEmpleado = "jeserodiguez93";
+    	response = request.get("/get/"+usuarioEmpleado);
+
+    }
+    
+    @Then("^devuelve un json$")
+    public void status_200() throws Exception {
+    	int statusCode = response.getStatusCode();
+    	Assert.assertEquals(200,statusCode);
+
     }
 }
 
