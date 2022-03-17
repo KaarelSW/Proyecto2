@@ -13,6 +13,7 @@ import io.restassured.specification.RequestSpecification;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 import org.json.JSONObject;
 import org.junit.Assert;
@@ -127,7 +128,91 @@ public class StepDefinitions {
     	int statusCode = response.getStatusCode();
     	Assert.assertEquals(404,statusCode);
 
+    } 
+    
+    
+
+    
+    @Then("^devuelve un objeto cuyo numero de propiedades coincide con las de empleado$")
+    public void devuelve_un_objeto_cuyo_numero_de_propiedades_coincide_con_las_de_empleado() throws Exception {
+    	JSONObject json = new JSONObject(response.body().asString());
+    	Assert.assertTrue(json.length() == 6);
     }
+    
+    
+    
+    @Then("^se devuelve un empleado cuyo propiedad nombre está compuesta por caracteres alfabeticos$")
+    public void se_devuelve_un_empleado_cuya_propriedad_nombre_esta_compuesta_por_caracteres_alfabeticos() throws Exception {
+    	JSONObject json = new JSONObject(response.body().asString());
+    	String nombre = json.get("nombre").toString();
+    	Assert.assertTrue(Pattern.matches("^[a-zA-ZáéíóúÁÉÍÓÚ]*$", nombre));
+    	
+    }
+    
+    
+    
+    String nombre;
+    @And("^el nombre no es un dato valido$")
+    public void el_nombre_no_es_un_dato_valido() throws Exception {
+    	nombre = "vegetta777";
+    }
+    
+    @Then("^se devuelve un error de nombre$")
+    public void nombre_no_valido() throws Exception {
+    	Assert.assertFalse(Pattern.matches("^[a-zA-ZáéíóúÁÉÍÓÚ]*$", nombre));
+    	
+    }
+
+    
+
+    
+    @Then("^se devuelve un empleado cuya propriedad apellido está compuesta por caracteres alfabeticos$")
+    public void se_devuelve_un_empleado_cuya_propriedad_apellido_esta_compuesta_por_caracteres_alfabeticos() throws Exception {
+    	JSONObject json = new JSONObject(response.body().asString());
+    	String apellido = json.get("apellido").toString();
+    	Assert.assertTrue(Pattern.matches("^[a-zA-ZáéíóúÁÉÍÓÚ]*$", apellido));
+    	
+    }
+    
+    
+    String apellido;
+    @And("^el apellido no es un dato válido$")
+    public void el_apellido_no_es_un_dato_valido() throws Exception {
+    	apellido = "vegetta777";
+    }
+    
+    @Then("^se devuelve un error de apellido$")
+    public void apellido_no_valido() throws Exception {
+    	Assert.assertFalse(Pattern.matches("^[a-zA-ZáéíóúÁÉÍÓÚ]*$", apellido));
+    	
+    }
+    
+    
+    
+    @Then("^se devuelve un empleado cuya propriedad correo tiene un formato correcto$")
+    public void email_valido() throws Exception {
+    	JSONObject json = new JSONObject(response.body().asString());
+    	String correo = json.get("correo").toString();
+    	Assert.assertTrue(Pattern.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", correo));
+    	
+    }
+    
+    
+   
+    String correo;
+    @And("^el correo no tiene un formato válido$")
+    public void correo_no_valido() throws Exception {
+    	correo = "vegetta777@juanitooo.A";
+    }
+    
+    @Then("^se devuelve un error de correo no valido$")
+    public void email_no_valido() throws Exception {
+    	Assert.assertFalse(Pattern.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", correo));
+    	
+    }
+    
     
 }
 

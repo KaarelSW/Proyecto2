@@ -31,7 +31,7 @@ Feature: Buscar datos detallados de un empleado
 		Given un administrador quiere consultar un empleado
 		When realiza petición de consulta por nombre de usuario
 		And el nombre no es un dato valido
-		Then se devuelve un error
+		Then se devuelve un error de nombre
 
 	Scenario: Al pedir los datos de un empleado, la propiedad apellido es una cadena de caracteres alfabéticos
 		Given un administrador quiere consultar un empleado
@@ -42,15 +42,15 @@ Feature: Buscar datos detallados de un empleado
 		Given un administrador quiere consultar un empleado
 		When realiza petición de consulta por nombre de usuario
 		And el apellido no es un dato válido
-		Then se devuelve un error
+		Then se devuelve un error de apellido
 
-	Scenario: Al pedir los datos de un empleado, la propiedad email tiene un formato válido.
+	Scenario: Al pedir los datos de un empleado, la propiedad correo tiene un formato válido.
 		Given un administrador quiere consultar un empleado
 		When realiza petición de consulta por nombre de usuario
-		Then se devuelve un empleado cuya propriedad email tiene un formato correcto. 
+		Then se devuelve un empleado cuya propriedad correo tiene un formato correcto
 
-	Scenario: Da error al pedir los datos de un empleado cuyo email no es valido
+	Scenario: Da error al pedir los datos de un empleado cuyo correo no es valido
 		Given un administrador quiere consultar un empleado
 		When realiza petición de consulta por nombre de usuario
-		And el email no tiene un formato válido
-		Then se devuelve un error
+		And el correo no tiene un formato válido
+		Then se devuelve un error de correo no valido
