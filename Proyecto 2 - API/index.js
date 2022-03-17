@@ -4,7 +4,7 @@ var app = express();
 var listado = __dirname + '/db.json';
 const fs = require("fs");
 
-app.get('/get', function (req, res) {
+app.get('/empleados', function (req, res) {
     if (fs.existsSync(listado)) res.sendFile(listado);
     else res.status(404).send("No se encuentra el listado");
 });
