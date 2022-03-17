@@ -18,9 +18,14 @@ app.get('/empleados', function (req, res) {
     else res.status(404).send("No se encuentra el listado");
 });
 
-/* app.get('get/{user}', function (req, res) {
+app.get('/empleado/:usuario', function(req, res) {
+    const usuario = req.params.usuario;
+    var empleados = require(listado).empleados;
+    var datos = empleados.find(x => x.usuario == usuario);
     
-}); */
+    if (JSON.stringify(datos)) res.send(datos);
+    else res.status(404).send("Usuario no encontrado");
+});
 
 var server = app.listen(port, function() {
 
@@ -29,4 +34,3 @@ var server = app.listen(port, function() {
 })
 
 module.exports = server;
-
