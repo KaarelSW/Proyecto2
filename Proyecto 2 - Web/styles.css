@@ -365,14 +365,13 @@ h3{
     padding: 50px 80px;
     display: grid;
     grid-template-columns: 65% 35%;
-
+    align-items: center;
 }
 
 .ser-text{
     padding: 0 65px;
     text-align: justify;
     text-justify: inter-word;
-    margin-top: 6%;
 }
 
 .ser-img img{
