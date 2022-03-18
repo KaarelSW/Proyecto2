@@ -354,19 +354,24 @@ h2{
 
 @import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
 
-.equipo-titulo{
-    color: white !important;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    font-size: 60px;
-}
 
 .members {
     font-family: "Montserrat", sans-serif;
-    color: #8d97ad;
     font-weight: 300;
     border-top: 2px solid #ccc;
-    background: #ededed  !important;
+    color: #51555f;
+    background: #cac7c7  !important;
+    
 }
+
+.members .title {
+
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
 
 .members h2{
     margin: 35px 0 16px !important;
@@ -385,8 +390,8 @@ h2{
 }
 
 
-.members .subtitle {
-    color: #8d97ad;
+.members p {
+    color: #5f6064;
     line-height: 24px;
 }
 
@@ -503,3 +508,55 @@ a.socialIcon:hover,
 .social-network a {
     background-color: #D3D3D3;
 }
+  
+.stack {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+  
+.stack span {
+    font-weight: bold;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    font-size: 5rem;
+    --stack-height: calc(100% / var(--stacks) - 1px);
+    --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+    --clip-top: calc(var(--stack-height) * var(--index));
+    --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+    clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+    animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+}
+  
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+  
+@keyframes stack {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+        text-shadow: -2px 3px 0 rgba(255, 251, 0, 0.87), 2px -3px 0 rgb(119, 0, 255);
+    };
+    60% {
+        opacity: 0.5;
+        transform: translateX(50%);
+    }
+    80% {
+        transform: none;
+        opacity: 1;
+        text-shadow: 2px -3px 0 rgb(255, 251, 0, 0.87), -2px 3px 0 rgb(119, 0, 255);
+    }
+    100% {
+      text-shadow: none;
+    }
+}
+  
+@keyframes glitch {
+    0% {
+        text-shadow: -2px 3px 0 rgb(255, 251, 0, 0.87), 2px -3px 0 rgb(119, 0, 255);
+        transform: translate(var(--glitch-translate));
+    }
+    2% {
+        text-shadow: 2px -3px 0 rgb(255, 251, 0, 0.87), -2px 3px 0 rgb(119, 0, 255);
+    }
+    4%, 100% {  text-shadow: none; transform: none; }
+  }
