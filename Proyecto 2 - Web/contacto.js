@@ -1,11 +1,15 @@
+var formulario = document.getElementById("contacto");
+formulario.addEventListener("submit", enviarDatos(formulario));
+
 function InvalidEmail(input) {    
+
     input.setCustomValidity(testEmail(input.value));
     return true;
 }
 
 function testEmail(valor){
 
-    const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const emailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (valor === '') {
         return "¡Introduce un e-mail!";
     }else if(valor.length < 3){
@@ -19,7 +23,8 @@ function testEmail(valor){
     }
 }
 
-function InvalidName(input) {    
+function InvalidName(input) {  
+
     input.setCustomValidity(testName(input.value));
     return true;
 }
@@ -40,7 +45,8 @@ function testName(valor){
     }
 }
 
-function InvalidNumber(input) {    
+function InvalidNumber(input) {  
+
     input.setCustomValidity(testNumber(input.value));
     return true;
 }
@@ -64,9 +70,21 @@ function testNumber(valor){
     }
 }
 
-function InvalidMensaje(input) {    
+function InvalidMensaje(input) {  
+
     input.setCustomValidity(testMensaje(input.value));
     return true;
+}
+
+
+
+function enviarDatos(form){
+
+    var datos = new FormData(form);
+    var req = new XMLHttpRequest();
+    req.open('POST','https://www.somesite.com/page', false);
+    req.send(datos);
+
 }
 
 function testMensaje(valor){
