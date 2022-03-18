@@ -28,7 +28,7 @@
         </nav>
     </div>
     <div class="container pb-5" >
-        <form id="contacto" name="contacto" enctype="multipart/form-data">
+        <form id="contacto" onsubmit="enviarDatos(this)" enctype="multipart/form-data">
             <div class="row">
                 <h1>¡Contáctanos!</h1>
             </div>
@@ -69,7 +69,7 @@
                     <label for="age">Soy mayor de edad</label>
                 </div>
                 <div class="col-xs-12">
-                    <button class="btn-lrg submit-btn">Enviar</button>
+                    <button class="btn-lrg submit-btn" type="submit">Enviar</button>
                 </div>
             </div>
         </form>
