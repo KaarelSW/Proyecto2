@@ -13,11 +13,10 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [ {
+    "rewrites": [ {
       "source": "contacto",
-      "destination": "/contacto.html"
-    } ],
-    "redirects": [ {
+      "destination": "/contacto.html"},
+      {
       "source": "documentacion",
       "destination": "/documentacion.html"
     } ]
