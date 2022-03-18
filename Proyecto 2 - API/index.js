@@ -15,7 +15,13 @@ app.get('/empleado/:usuario', function (req, res) {
     var datos = empleados.find(x => x.usuario == usuario);
     
     if (JSON.stringify(datos)) res.send(datos);
-    else res.status(404).send("Usuario no encontrado");
+    else {
+        var json404 = {
+            status: 404,
+            msg: "Usuario no encontrado"
+        }
+        res.status(404).send(json404);
+    }
 });
 
 var server = app.listen(8080, function () {
