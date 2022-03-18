@@ -145,8 +145,6 @@ public class StepDefinitions {
 
     @Then("^devuelve un error al respecto$")
     public void devuelve_un_error_al_respecto() throws Exception {
-        int sumaLenght = nombreLenght + apellidoLenght + correoLenght + usuarioLenght + direccionLenght
-                + contrasenyaLenght;
         Assert.assertTrue(nombreLenght == 0 || apellidoLenght == 0 || correoLenght == 0 || usuarioLenght == 0
                 || direccionLenght == 0 || contrasenyaLenght == 0);
 
