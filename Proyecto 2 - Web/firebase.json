@@ -12,7 +12,15 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "redirects": [ {
+      "source": "contacto",
+      "destination": "/contacto.html"
+    } ],
+    "redirects": [ {
+      "source": "documentacion",
+      "destination": "/documentacion.html"
+    } ]
   },
   "storage": {
     "rules": "storage.rules"
