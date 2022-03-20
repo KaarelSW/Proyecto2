@@ -1,5 +1,6 @@
 package Proyecto2.cucumber;
 
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.an.E;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.But;
@@ -12,22 +13,54 @@ import io.restassured.specification.RequestSpecification;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 import java.util.regex.Pattern;
 
 import org.json.JSONObject;
 import org.junit.Assert;
 
 public class StepDefinitions {
-
-	private static final String URL = "https://snariox.herokuapp.com/";
-	RequestSpecification request;
 	
+	RequestSpecification request;
+	static String url;
+	
+	@BeforeAll
+	public static void Before_All() {
+		Properties props = new Properties();
+        FileInputStream in = null;
+        try {
+            in = new FileInputStream("url.properties");
+            props.load(in);
+            //System.out.println(props.getProperty("baseUrl"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                 if (in != null) {
+                     in.close();
+                 }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        url = props.getProperty("baseUrl");
+	}
+		
+        
+    
+    
 	//Feature: Consultar todos los empleados
     
     @Given("^un administrador quiere consultar empleados$")
     public void ruta_de_API() throws Exception {
-        RestAssured.baseURI  = URL;
+        RestAssured.baseURI  = url;
         request = RestAssured.given();
 
     }
@@ -98,7 +131,7 @@ public class StepDefinitions {
     
     @Given("un administrador quiere consultar un empleado$")
     public void ruta_de_API2() throws Exception {
-        RestAssured.baseURI  = URL;
+        RestAssured.baseURI  = url;
         request = RestAssured.given();
 
     }

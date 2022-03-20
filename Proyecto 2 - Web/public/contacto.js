@@ -1,6 +1,3 @@
-var formulario = document.getElementById("contacto");
-formulario.addEventListener("submit", enviarDatos(formulario));
-
 function InvalidEmail(input) {    
 
     input.setCustomValidity(testEmail(input.value));

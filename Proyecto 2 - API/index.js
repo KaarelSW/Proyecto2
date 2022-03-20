@@ -14,8 +14,13 @@ app.set('view engine', 'hbs');
 
 app.get('/empleados', function (req, res) {
     if (fs.existsSync(listado)) res.sendFile(listado);
-
-    else res.status(404).send("No se encuentra el listado");
+    else {
+        let json404 = {
+            status: 404,
+            msg: "Lista no encontrada"
+        }
+        res.status(404).send(json404);
+    }
 });
 
 app.get('/empleado/:usuario', function(req, res) {
@@ -24,7 +29,13 @@ app.get('/empleado/:usuario', function(req, res) {
     var datos = empleados.find(x => x.usuario == usuario);
     
     if (JSON.stringify(datos)) res.send(datos);
-    else res.status(404).send("Usuario no encontrado");
+    else {
+        let json404 = {
+            status: 404,
+            msg: "Usuario no encontrado"
+        }
+        res.status(404).send(json404);
+    }
 });
 
 var server = app.listen(port, function() {
