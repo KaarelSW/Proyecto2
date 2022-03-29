@@ -6,7 +6,13 @@ const fs = require("fs");
 
 app.get('/empleados', function (req, res) {
     if (fs.existsSync(listado)) res.sendFile(listado);
-    else res.status(404).send("No se encuentra el listado");
+    else {
+        let json404 = {
+            status: 404,
+            msg: "Lista no encontrada"
+        }
+        res.status(404).send(json404);
+    }
 });
 
 app.get('/empleado/:usuario', function(req, res) {
@@ -16,7 +22,7 @@ app.get('/empleado/:usuario', function(req, res) {
     
     if (JSON.stringify(datos)) res.send(datos);
     else {
-        var json404 = {
+        let json404 = {
             status: 404,
             msg: "Usuario no encontrado"
         }
